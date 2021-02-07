@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link rel="stylesheet" href="css/bootstrap-4.4.1.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=M+PLUS+1p"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container my-5">
+      <div class="row justify-content-center">
+        <div class="col-lg-8 col-12">
+          <h1>Just Simple TODO List</h1>
+
+          <div id="app">
+            <form class="my-5" @submit.prevent="addItem">
+              <input
+                type="text"
+                v-model="newItem.title"
+                class="newTask my-2"
+                placeholder="タスクを入れてください"
+              />
+              <input type="submit" value="Add" class="addBtn" />
+              <input type="date" v-model="newItem.date" />
+              <select
+                name=""
+                id="status"
+                class="sorting"
+                v-model="newItem.status"
+              >
+                <option value="未着手">未着手</option>
+                <option value="続行中">続行中</option>
+                <option value="あとでやる">あとでやる</option>
+              </select>
+            </form>
+
+            <ul>
+              <li
+                v-for=" todo in todos "
+                v-bind:key="todo.id"
+                　class="d-flex align-items-center"
+              >
+                <input
+                  type="checkbox"
+                  class="doneCheck"
+                  v-model="todo.isDone"
+                />
+
+                <div class="taskList">
+                  <span v-bind:class="{done : todo.isDone }"
+                    >{{todo.title}}</span
+                  >
+                </div>
+                <div class="dateList">{{todo.date }}</div>
+                <div class="statusList"><p>{{todo.status}}</p></div>
+              </li>
+            </ul>
+            <div class="clearfix">
+              <button class="trash" @click="deleteItem">
+                <i class="far fa-trash-alt"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

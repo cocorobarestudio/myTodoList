@@ -1,0 +1,110 @@
+body {
+  font-family: "M PLUS 1p", "Open Sans", sans-serif;
+  vertical-align: baseline;
+  background: transparent;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 24px;
+  border-bottom: 1px solid #000;
+  padding-bottom: 3px;
+}
+h2 {
+  font-size: 22px;
+}
+p {
+  font-size: 16px;
+}
+button:focus {
+  outline: 0;
+}
+.newTask {
+  width: 80%;
+  font-size: 20px;
+}
+
+button,
+input,
+select {
+  outline: none; /* クリックしたときに表示される枠線を消す */
+}
+.addBtn {
+  background-color: #87ceeb;
+  border: 0px;
+  padding: 6px 20px;
+  color: #fff;
+}
+
+.trashBtn {
+  border: none; /* 枠線を消す */
+  outline: none; /* クリックしたときに表示される枠線を消す */
+  background: transparent; /* 背景の灰色を消す */
+}
+
+input[type="date"],
+select {
+  width: 30%;
+}
+
+select {
+  height: 30px !important;
+  line-height: 30px;
+}
+ul {
+  padding-inline-start: 0px;
+}
+li {
+  width: 100%;
+  padding-bottom: 15px;
+  padding-top: 20px;
+  border-bottom: 1px solid #aaa;
+}
+
+.doneCheck {
+  width: 10%;
+}
+.taskList {
+  width: 50%;
+}
+
+.statusList {
+  background-color: #ffc0cb;
+  height: 20px;
+  text-align: center;
+  width: 20%;
+  padding-top: 2px;
+}
+.statusList > p {
+  display: inline-block;
+  font-size: 12px;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.dateList {
+  width: 20%;
+}
+
+.todo-id {
+  font-size: 10px;
+}
+
+.done {
+  text-decoration: line-through;
+  color: #aaa;
+}
+
+.trash {
+  float: right;
+  width: 40px;
+  height: 40px;
+  font-size: 26px;
+  border-radius: 25px;
+  background-color: #87ceeb;
+  color: #ffffff;
+  display: block;
+  text-align: center;
+  border-color: transparent;
+}
