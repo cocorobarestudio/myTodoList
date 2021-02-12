@@ -1,5 +1,6 @@
 var app = new Vue({
   el: "#app",
+  editIndex: -1,
   data: {
     todos: [],
     newItem: {
@@ -19,6 +20,8 @@ var app = new Vue({
         status: this.newItem.status,
         isDone: false,
       };
+      if (this.newItem.title.length === 0) return;
+      if (this.newItem.title.length > 20) return;
       this.todos.push(item);
       this.newItem.title = "";
       this.newItem.id++;
@@ -27,7 +30,7 @@ var app = new Vue({
     },
     deleteItem: function () {
       let newTodos = this.todos.filter((todo) => {
-        return todo.isDone !== true;
+        return todo.isDone === false;
       });
       this.todos = newTodos;
       // this.todos = this.todos.filter((todo) => todo.id !== target);
